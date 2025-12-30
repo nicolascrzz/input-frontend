@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #00171f;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 375px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0);
+}
+
+h2 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 30x;
+    font-size: 35px;
+
+    background-color: #007EA7;
+    color: #ffffff;
+    border-radius: 12px;
+
+    text-align: center;
+    box-shadow: 0 5px 8px #00171f98;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bolder;
+    color: #007EA7;
+}
+
+input, select {
+    margin-top: 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(0, 0, 0);
+    background: #ffffff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: rgb(150, 16, 202);
+}
+
+.valor-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.valor-wrapper span {
+    background: rgb(216, 216, 216);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 15%;
+}
+
+.valor-wrapper input {
+    border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #007EA7;
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 5px 8px #00171f98;
+}
+
+button:hover {
+    background: #004258;
+}
+
+#status {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-exportar {
+    margin-top: 10px;
+    top: 30px;
+    right: 20px;
+    background-color: #015875;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 8px #00171fb9;
+}
+
+.btn-exportar:hover {
+   background: #003647;
+}
