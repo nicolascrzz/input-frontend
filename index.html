@@ -10,9 +10,13 @@
 <body>
 
     <div class="container">
-        <h2>
+        <h2 class="titulo-container">
             Adicionar Gastos
         </h2>
+
+        <h3 class="subtitulo-container">
+            Adicione os gastos abaixo
+        </h3>
 
 <!-- VALOR -->
 <div class="campo">
@@ -55,13 +59,15 @@
   <!-- BOTÃO -->
    <button type="button" onclick="salvar()">Salvar</button>
 
-   <button type="button" id="btn-modal" onclick="abrirModal()" class="btn-exportar">
+   <button type="button" class="btn-modal" onclick="abrirModal()" class="btn-exportar">
     Exportar Relatório
    </button>
 
    <div id="modal" class="modal">
     <div class="modal-content">
-        <h3>Exportar Relatório</h3>
+        <h3 class="titulo-modal">
+            Exportar Relatório
+        </h3>
 
         <label>Data Inicial</label>
         <input type="date" id="dataInicio">
@@ -70,8 +76,8 @@
         <input type="date" id="dataFim">
 
         <div class="modal-actions">
-            <button id="btn-cancelar" onclick="fecharModal()">Cancelar</button>
-            <button id="btn-exportar" onclick="exportarExcel()">Exportar Relatório</button>
+            <button id="btn-cancelar"  class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+            <button id="btn-exportar" class="btn-exportar" onclick="exportarExcel()">Exportar Relatório</button>
         </div>
     </div>
    </div>
