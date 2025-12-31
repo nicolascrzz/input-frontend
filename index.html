@@ -28,10 +28,10 @@
     <label>Tipo de Gasto</label>
     <select id="campo2">
         <option value="">Selecione</option>
-        <option value="1">Estudos 📚</option>
-        <option value="2">Alimentação 🍔</option>
-        <option value="3">Desejos 🛍️</option>
-        <option value="4">Lazer 😎</option>
+        <option value="Estudos 📚">Estudos 📚</option>
+        <option value="Alimentação 🍔">Alimentação 🍔</option>
+        <option value="Desejos 🛍️">Desejos 🛍️</option>
+        <option value="Lazer 😎">Lazer 😎</option>
     </select>
 </div>
 
@@ -40,9 +40,9 @@
     <label>Tipo de Pagamento</label>
     <select id="campo3">
         <option value="">Selecione</option>
-        <option value="1">Débito</option>
-        <option value="2">PIX</option>
-        <option value="3">Dinheiro</option>
+        <option value="Débito 💳">Débito 💳</option>
+        <option value="PIX 📱">PIX 📱</option>
+        <option value="Dinheiro 💰">Dinheiro 💰</option>
     </select>
  </div>
 
@@ -55,9 +55,26 @@
   <!-- BOTÃO -->
    <button type="button" onclick="salvar()">Salvar</button>
 
-   <button type="button" id="btn-exportar" class="btn-exportar">
-    Exportar Excel
+   <button type="button" id="btn-modal" onclick="abrirModal()" class="btn-exportar">
+    Exportar Relatório
    </button>
+
+   <div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Exportar Relatório</h3>
+
+        <label>Data Inicial</label>
+        <input type="date" id="dataInicio">
+
+        <label>Data Final</label>
+        <input type="date" id="dataFim">
+
+        <div class="modal-actions">
+            <button id="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+            <button id="btn-exportar" onclick="exportarExcel()">Exportar Relatório</button>
+        </div>
+    </div>
+   </div>
 
     <p id="status"></p>
 

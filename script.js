@@ -34,7 +34,7 @@ async function salvar() {
     campo4.value = "";
 
     status.innerText = "Salvo ✅";
-    status.style.color = "#1cc88a";
+    status.style.color = "#4edaa6ff";
 }
 
 //Enter
@@ -43,10 +43,29 @@ campo4.addEventListener("keydown", e => {
     if (e.key === "Enter") salvar();
 });
 
-document.getElementById("btn-exportar").addEventListener("click", () => {
+
+function abrirModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function exportarExcel() {
+    const inicio = document.getElementById("dataInicio").value;
+    const fim = document.getElementById("dataFim").value;
+
+    if (!inicio || !fim) {
+        alert("Selecione as duas datas");
+        return;
+    }
+
+    document.getElementById("btn-exportar").addEventListener("click", () => {
     const confirmar = confirm("Deseja realmente exportar o relátório Excel?")
 
     if (confirmar) {
         window.open(`${API_URL}/exportar-excel`, "_blank");
     }
 })
+}
