@@ -7,9 +7,9 @@ const btnSalvar = document.getElementById("btn-salvar");
 const btnAdmin = document.getElementById("btn-admin");
 const modalAdmin = document.getElementById("modal-admin");
 const closeAdmin = document.querySelector(".close-admin");
-const modalData = document.getElementById("modal")
-const abrirModalData = document.getElementById("abriModalData")
-const fecharModalData = document.getElementById("btn-cancelar")
+const modalData = document.getElementById("modal");
+const abrirModalData = document.getElementById("abriModalData");
+const fecharModalData = document.getElementById("btn-cancelar");
 
 //LOCAL
 const API_URL = "https://input-backend-1.onrender.com";
