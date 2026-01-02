@@ -59,7 +59,7 @@ html {
 }
 
 .titulo-modal {
-    display: inline-block;
+    display: block;
     padding: 15px 20px;
     margin-bottom: 25px;
     font-size: 20px;
@@ -138,7 +138,7 @@ button:hover {
     background: #309427;
 }
 
-#status {
+#status, #status-1 {
     text-align: center;
     margin-top: 20px;
     color: black;
@@ -317,7 +317,26 @@ body.moda-open {
     margin: 5px 0 5px 0;
 }
 
-.btn-admin {
+.divisor-modal {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #007EA7,
+        transparent
+    );
+    
+    margin: -5px 0 0px 0;
+}
+
+/*
+    === ADMIN CONSOLE (STATUS: INATIVO)
+    Suspenso por alta complexidade e desvio de
+    atenção.
+
+
+/*.btn-admin {
     width: 20px;
     height: 20px;
 
@@ -350,7 +369,7 @@ body.moda-open {
     background: #ffffff00;
 }
 
-#modal-admin input {
+#console-login input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -381,11 +400,40 @@ body.moda-open {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    color: #cf3131;
+    font-size: 20px;
 
-    background: #cf3131;
+    background: #ffffff;
+    border: 2px solid #cf3131;
     border-radius: 50%;
 
     cursor: pointer;
 
     z-index: 10;
+}
+
+.close-admin:hover {
+    background: #cf3131;
+    color: #ffffff;
+}
+
+#console-output {
+    background: #ffffff;
+    font-family: monospace;
+    padding: 12px;
+    height: 150px;
+    overflow-y: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+#console-output input {
+    background: #060f13;
+    color: #ffffff;
+    height: 50px;
+}
+
+.hidden {
+    display: none;
 }

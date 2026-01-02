@@ -1,8 +1,11 @@
+let adminAutenticado = false;
+
 const campo1 = document.getElementById("campo1");
 const campo2 = document.getElementById("campo2");
 const campo3 = document.getElementById("campo3");
 const campo4 = document.getElementById("campo4");
 const status = document.getElementById("status");
+const status1 = document.getElementById("status-1")
 const btnSalvar = document.getElementById("btn-salvar");
 const btnAdmin = document.getElementById("btn-admin");
 const modalAdmin = document.getElementById("modal-admin");
@@ -10,6 +13,8 @@ const closeAdmin = document.querySelector(".close-admin");
 const modalData = document.getElementById("modal");
 const abrirModalData = document.getElementById("abriModalData");
 const fecharModalData = document.getElementById("btn-cancelar");
+const input = document.getElementById("console-input");
+const output = document.getElementById("console-output");
 
 //LOCAL
 const API_URL = "https://input-backend-1.onrender.com";
@@ -124,10 +129,66 @@ async function confirmarAdmin() {
 
     const data = await resposta.json();
 
-    if (data.autorizado) {
-        alert("Acesso Autonizado ✅");
-        closeAdmin();
+    if (data.ok) {
+        adminAutenticado = true;
+
+        abrirConsole();
+
+        status1.innerText = "Administrador Autorizado ⚙️";
+        status1.style.color = "#5a5a5aff";
+
+        setTimeout(() => {
+            status1.style.transition = "opacity 0.8s";
+            status1.style.opacity = 0;
+        }, 2500);
+
+        setTimeout(() => {
+            status1.innerText = "";
+            status1.style.transition = ""; 
+        }, 3300);
+
     } else {
-        alert("Acesso Negado: Senha incorreta! ❌")
+        status1.innerText = "Senha incorreta ❌";
+        status1.style.color = "#d63636ff";
     }
+
+
+function abrirConsole() {
+    document.getElementById("console-login").classList.add("hidden");
+    document.getElementById("console-terminal").classList.remove("hidden");
 }
+
+async function enviarComando() {
+
+    const comando = input.value.trim();
+    if (!comando) return;
+
+    output.innerHTML += `> ${comando}<br>`;
+
+    const res = await fetch(`${API_URL}/admin/comando`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ comando })
+    });
+
+    const data = await res.json();
+
+    output.innerHTML += `${data.resposta}<br><br>`;
+    output.scrollTop = output.scrollHeight;
+
+    input.value = "";
+}
+
+input.addEventListener("keydown", e => {
+    if (e.key === "Enter") enviarComando();
+});
+}
+
+fetch("https://input-backend-1.onrender.com/admin/limpar-registros", {
+    method: "POST",
+    headers: {
+        "x-admin-password": "740500"
+    }
+})
+.then(res => res.json())
+.then(data => alert(data.mensagem));

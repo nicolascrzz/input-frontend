@@ -101,26 +101,46 @@
             <button class="close-admin">
                 &times;
             </button> 
-        
+
+            <!-- Parte Interna do Modal -->
             <div class="modal-content">
-                <h2 class="titulo-modal">
-                    Administrador
-                </h2>
+                
+                <!-- Login do Administrador -->
+                <div id="console-login" class="console-login">
 
-                <hr class="divisor-container">
+                    <h2 class="titulo-modal">Console Login</h2>
+                    <h3 class="subtitulo-container">Área Restrita: insira a senha!</h3>
 
-                <h3 class="subtitulo-container">
-                    Área Restrita: insira a senha<br>para prosseguir
-                </h3>
+                    <label>Senha:</label>
 
-                <hr class="divisor-container">
+                    <input type="password" id="admin-password">
+                    <button id="btn-confirm-admin" onclick="confirmarAdmin()">
+                        Confirmar
+                    </button>
 
-                <label>Senha:</label>
-                <input type="password" id="admin-password">
+                </div>
 
-                <button id="btn-confirm-admin" onclick="confirmarAdmin()">
-                    Confirmar
-                </button>
+                <div id="console-terminal" class="console-terminal hidden">
+
+                    <h2 class="titulo-modal">Terminal Administrativo</h2>
+
+                    <hr class="divisor-container">
+
+                    <div id="console-output">
+
+                        <input 
+                            type="text"
+                            id="console-input"
+                            placeholder="Utilize '/help' para acessar a lista de comandos "
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+            <p id="status-1"></p>
+
             </div>
         </div>
 
@@ -128,9 +148,9 @@
 
     <p id="status"></p>
 
-    <button type="button" id="btn-admin" class="btn-admin">
+   <!-- <button type="button" id="btn-admin" class="btn-admin">
        ⚙️ 
-    </button>
+    </button> -->
 
     <script src="script.js"></script>
 </body>
